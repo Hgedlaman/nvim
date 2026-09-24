@@ -485,9 +485,22 @@ do
   -- cursor location to LINE:COLUMN
   ---@diagnostic disable-next-line: duplicate-set-field
   statusline.section_location = function() return '%2l:%-2v' end
-
+  
   -- ... and there is more!
   --  Check out: https://github.com/nvim-mini/mini.nvim
+
+  -- ADDED BY HANNAH:
+  -- markdown renderer
+     vim.pack.add({
+    -- this renderer improves the look of md while writing it.
+    'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+    -- this offers a preview.
+    'https://github.com/iamcco/markdown-preview.nvim',
+
+})
+    vim.g.mkdp_filetypes = { 'markdown' }
+
+    require('render-markdown').setup({}) -- only mandatory if you want to set custom options
 end
 
 -- ============================================================
